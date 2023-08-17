@@ -4,11 +4,7 @@ function TaskForm({ createTask }) {
   const [title, setTitle] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newTask = {
-      title,
-    };
-    createTask(newTask);
-    console.log(newTask);
+    createTask(title);
   };
   return (
     <>
