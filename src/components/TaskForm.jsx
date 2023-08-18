@@ -24,6 +24,7 @@ function TaskForm({ createTask }) {
           placeholder="Add yoor task"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
+          autoFocus
         />
         <textarea
           name=""
