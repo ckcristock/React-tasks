@@ -18,15 +18,15 @@ function TaskForm() {
     setDescription("");
   };
   return (
-    <>
-      <h1>Task Form C</h1>
-
-      <form onSubmit={handleSubmit}>
+    <div className="max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="bg-slate-800 p-10 mb-4">
+        <h1 className="text-2xl font-bold text-white mb-3">Create your task</h1>
         <input
           type="text"
           placeholder="Add yoor task"
           onChange={(e) => setTitle(e.target.value)}
           value={title}
+          className="bg-slate-300 p-3 w-full mb-2"
           autoFocus
         />
         <textarea
@@ -35,10 +35,13 @@ function TaskForm() {
           placeholder="description"
           onChange={(e) => setDescription(e.target.value)}
           value={description}
+          className="bg-slate-300 p-3 w-full mb-2"
         ></textarea>
-        <button type="submit">Save</button>
+        <button className="bg-indigo-500 px-3 py-1 text-white" type="submit">
+          Save
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 

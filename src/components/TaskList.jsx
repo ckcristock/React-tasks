@@ -4,13 +4,14 @@ import { TaskContext } from "../context/TaskContext";
 
 function TaskList() {
   const { tasks } = useContext(TaskContext);
-  console.log("tasks", tasks);
-  console.log("Tasklist C", tasks);
+
+  if (tasks.length == 0) {
+    return <h1 className="text-white text-4xl font-bold">No task list</h1>;
+  }
 
   return (
     <>
-      <h1>TaskList</h1>
-      <div>
+      <div className="grid grid-cols-4 gap-2">
         {tasks.map((task) => {
           return <TaskCard key={task.id} task={task} />;
         })}
